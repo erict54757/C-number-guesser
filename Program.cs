@@ -35,7 +35,7 @@ namespace NumberGuesser
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("{0}:Version {1} by {2}", appName, appVersion, appAuthor);
-
+            
 
             Console.ResetColor();
 
@@ -64,15 +64,22 @@ namespace NumberGuesser
                     int rand = RandomNumber(1, 10);
 
                     int guess = LetterToNumber(Console.ReadLine());
-
+                    // run until user guess equals random number
                     while (guess != rand)
                     {
-                        Console.WriteLine("Sorry, that is not correct! Guess again..." + rand + " " + guess);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Sorry, that is not correct! Guess again...");
+                        Console.ResetColor();
                         guess = LetterToNumber(Console.ReadLine());
                     }
 
 
-                    Console.WriteLine($"Random number between 1 and 10 is {rand} your guess was {guess}! /n Congratulations, Would you like to play again?");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Random number between 1 and 10 is {rand} your guess was {guess}!");
+                    Console.WriteLine($"Congratulations, Would you like to play again? Hit Y for Yes or any other key for No.");
+                    Console.ResetColor();
+
+
 
 
                     startOver = Console.ReadLine();
@@ -80,7 +87,7 @@ namespace NumberGuesser
                 }
                 else
                 {
-                    Console.WriteLine("Ok, bye go away then");
+                    Console.WriteLine("Ok, bye go away then!");
                     Console.ReadLine();
 
                 }
