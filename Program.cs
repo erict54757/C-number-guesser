@@ -26,9 +26,12 @@ namespace NumberGuesser
         // entryPoint for program
         static void Main(string[] args)
         {
+
+        
+
             //start here
             string startOver = "";
-            string appName = "Number Guesser";
+            string appName = "Number Guesser or Hangman";
             string appVersion = "1.0.0";
             string appAuthor = "Eric Taft";
 
@@ -47,6 +50,13 @@ namespace NumberGuesser
             Console.WriteLine("Hello " + input + ", Want to play a game? Press Y for Yes or N for No.");
 
             string play = Console.ReadLine();
+            Console.WriteLine("For Hangman press one. For Number Guess press two.");
+            string choose = Console.ReadLine();
+            if (choose == "1")
+            {
+                Hangman.start();
+            }
+           
 
             // Conditional to see if you want to play or not
             void playThis()
